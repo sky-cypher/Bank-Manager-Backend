@@ -1,4 +1,4 @@
-package com.examplewe.bank.model;
+package com.examplewe.bankmanager.model;
 
 import javax.persistence.*;
 
@@ -8,7 +8,7 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
                     generator = "transaction_id")
-    @SequenceGenerator(name = "transaction_id")
+    @SequenceGenerator(name = "transaction_id", allocationSize = 1)
     @Column(nullable = false, updatable = false)
     private long transactionID;
     private long accountFromID;

@@ -1,6 +1,4 @@
-package com.examplewe.bank.exception;
-
-import java.util.function.Supplier;
+package com.examplewe.bankmanager.exception;
 
 public class CustomerNotFoundException extends RuntimeException {
     public CustomerNotFoundException(long id) {

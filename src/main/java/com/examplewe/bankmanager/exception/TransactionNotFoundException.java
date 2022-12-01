@@ -1,4 +1,4 @@
-package com.examplewe.bank.exception;
+package com.examplewe.bankmanager.exception;
 
 public class TransactionNotFoundException extends RuntimeException {
     public TransactionNotFoundException(long id) {

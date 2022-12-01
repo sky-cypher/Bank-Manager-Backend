@@ -1,7 +1,7 @@
-package com.examplewe.bank.resource;
+package com.examplewe.bankmanager.resource;
 
-import com.examplewe.bank.model.Transaction;
-import com.examplewe.bank.service.TransactionService;
+import com.examplewe.bankmanager.model.Transaction;
+import com.examplewe.bankmanager.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

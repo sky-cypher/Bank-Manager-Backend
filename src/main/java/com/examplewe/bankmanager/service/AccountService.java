@@ -1,8 +1,8 @@
-package com.examplewe.bank.service;
+package com.examplewe.bankmanager.service;
 
-import com.examplewe.bank.exception.AccountNotFoundException;
-import com.examplewe.bank.model.Account;
-import com.examplewe.bank.repo.AccountRepo;
+import com.examplewe.bankmanager.exception.AccountNotFoundException;
+import com.examplewe.bankmanager.model.Account;
+import com.examplewe.bankmanager.repo.AccountRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +34,9 @@ public class AccountService {
         accountRepo.deleteById(accountID);
     }
 
+    public void deleteAccountsByCustomerID(long customerID) {
+        accountRepo.deleteAllByCustomerID(customerID);
+    }
     public Account updateAccount(Account account) {
         long id = account.getAccountID();
         if (accountRepo.existsById(id))

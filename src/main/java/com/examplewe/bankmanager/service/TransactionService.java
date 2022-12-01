@@ -1,11 +1,11 @@
-package com.examplewe.bank.service;
+package com.examplewe.bankmanager.service;
 
-import com.examplewe.bank.model.Account;
-import com.examplewe.bank.model.Transaction;
-import com.examplewe.bank.repo.TransactionRepo;
+import com.examplewe.bankmanager.model.Account;
+import com.examplewe.bankmanager.model.Transaction;
+import com.examplewe.bankmanager.repo.TransactionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.examplewe.bank.exception.TransactionNotFoundException;
+import com.examplewe.bankmanager.exception.TransactionNotFoundException;
 
 import javax.transaction.Transactional;
 import java.util.List;

@@ -1,11 +1,10 @@
-package com.examplewe.bank.resource;
+package com.examplewe.bankmanager.resource;
 
-import com.examplewe.bank.exception.CustomerNotFoundException;
-import com.examplewe.bank.model.Account;
-import com.examplewe.bank.model.Customer;
-import com.examplewe.bank.model.Transaction;
-import com.examplewe.bank.service.AccountService;
-import com.examplewe.bank.service.CustomerService;
+import com.examplewe.bankmanager.exception.CustomerNotFoundException;
+import com.examplewe.bankmanager.model.Account;
+import com.examplewe.bankmanager.model.Customer;
+import com.examplewe.bankmanager.service.AccountService;
+import com.examplewe.bankmanager.service.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -38,7 +37,7 @@ public class AccountResource {
         return new ResponseEntity<>(accounts, HttpStatus.OK);
     }
 
-    @GetMapping("/find/by/customer{id}")
+    @GetMapping("/find/by/customer/{id}")
     public ResponseEntity<List<Account>>
     getAccountByCustomer(@PathVariable("id") long id) {
         List<Account> accounts = accountService.getAccountsByCustomerID(id);

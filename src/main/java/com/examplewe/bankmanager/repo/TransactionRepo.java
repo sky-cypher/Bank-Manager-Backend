@@ -1,6 +1,6 @@
-package com.examplewe.bank.repo;
+package com.examplewe.bankmanager.repo;
 
-import com.examplewe.bank.model.Transaction;
+import com.examplewe.bankmanager.model.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

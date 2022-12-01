@@ -1,4 +1,4 @@
-package com.examplewe.bank.model;
+package com.examplewe.bankmanager.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -9,7 +9,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
                     generator = "customer_id")
-    @SequenceGenerator(name = "customer_id")
+    @SequenceGenerator(name = "customer_id", allocationSize = 1)
     @Column(nullable = false, updatable = false)
     private long customerID;
     private String name;

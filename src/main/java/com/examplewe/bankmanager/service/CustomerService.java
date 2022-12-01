@@ -1,8 +1,8 @@
-package com.examplewe.bank.service;
+package com.examplewe.bankmanager.service;
 
-import com.examplewe.bank.exception.CustomerNotFoundException;
-import com.examplewe.bank.model.Customer;
-import com.examplewe.bank.repo.CustomerRepo;
+import com.examplewe.bankmanager.exception.CustomerNotFoundException;
+import com.examplewe.bankmanager.model.Customer;
+import com.examplewe.bankmanager.repo.CustomerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

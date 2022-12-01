@@ -1,22 +1,27 @@
-package com.examplewe.bank.resource;
+package com.examplewe.bankmanager.resource;
 
-import com.examplewe.bank.model.Customer;
-import com.examplewe.bank.service.CustomerService;
+import com.examplewe.bankmanager.model.Customer;
+import com.examplewe.bankmanager.service.CustomerService;
+import com.examplewe.bankmanager.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
 @RequestMapping("/customer")
 public class CustomerResource {
     private final CustomerService customerService;
+    private final AccountService accountService;
 
     @Autowired
-    public CustomerResource(CustomerService customerService) {
+    public CustomerResource(CustomerService customerService,
+                            AccountService accountService) {
         this.customerService = customerService;
+        this.accountService = accountService;
     }
 
     @GetMapping("/all")
@@ -46,8 +51,10 @@ public class CustomerResource {
     }
 
     @DeleteMapping("/delete/{id}")
+    @Transactional
     public ResponseEntity<?> deleteCustomer(@PathVariable("id") long id) {
         customerService.deleteCustomer(id);
+        accountService.deleteAccountsByCustomerID(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
